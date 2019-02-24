@@ -11,22 +11,30 @@ function setup() {
 
   // New tree
   tree = new Tree();
+	balancedTree = new BalancedTree()
 
   // Add ten random values
+var arr = new Array()
   for (var i = 0; i < 10; i++) {
-    tree.addValue(floor(random(0, 100)));
+	  _r = floor(random(0, 100))
+	  arr.push(_r)
+	
+   	tree.addValue(_r);
+	  balancedTree.addValue(_r)
   }
+	console.log('adding order arr: ', arr)
 
   background(0);
 
   // Traverse the tree
   tree.traverse();
+	balancedTree.traverse()
 
   // Search the tree for 10
-  var result = tree.search(10);
-  if (result == null) {
-    console.log('not found');
-  } else {
-    console.log(result);
-  }
+  // var result = tree.search(10);
+  // if (result == null) {
+  //   console.log('not found');
+  // } else {
+  //   // console.log(result);
+  // }
 }
